@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 project(example)
 
 # enable fortran, c, and c++ language
-enable_language(Fortran C CXX)
+enable_language(C CXX)
 
 # project version
 set(VERSION_MAJOR 1)
@@ -46,9 +46,6 @@ if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
     set(CMAKE_CXX_FLAGS_RELEASE "-O3")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
 endif()
-
-# build executable
-add_executable(hello.x src/hello.F90)
 
 # location of header files
 include_directories(
